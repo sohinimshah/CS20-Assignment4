@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #FFFFC2;
+        }
+        h1 {
+            background-image: url("fastFood.jpeg");
+            text-align: center;
+            color: #FFFF60;
+            padding: 30px;
+            opacity: 0.9;
+            margin-top: 0px;
+        }
+        #orderInfo {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 2fr 1fr;
+            grid-template-areas:
+                "left right";
+            font-size: 12pt;
+            font-family: verdana;
+        }
+        #leftColumn {
+            grid-area: left;
+        }
+
+        #rightColumn {
+            grid-area: right;
+        }
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <title>Joe's Hotdog Stand</title>
+    </head>
+    <body>
+        <h1>Welcome to Joe's Hotdog Stand</h1>
+        <div id="orderInfo">
+            <div id="leftColumn">
+                <script language="javascript">
+                    document.write("Hotdogs ($3.75)<br />Fries ($2.00)<br />Sodas ($1.80)<br /><br />Subtotal<br />Discount (-10%)<br />Subtotal after discount<br />Tax (+6.25%)<br />Final Amount");
+                </script>
+            </div>
+            <div id="rightColumn">
+                <script language="javascript">
+                    var num_hotdogs = prompt("How many hotdogs do you want?", "");
+                    var num_fries = prompt("How many fries do you want?", "");
+                    var num_sodas = prompt("How many sodas do you want?", "");
+    
+                    var subtotal = (num_hotdogs * 3.75) + (num_fries * 2.00) + (num_sodas * 1.80);
+                    subtotal = subtotal;
+                    var discount = (0);
+                    var subtotal_after_discount = subtotal;
+                    if (subtotal >= 20.00) {
+                        discount = (subtotal / 10);
+                        subtotal_after_discount = (subtotal - discount);
+                    }
+                    final_amount = (subtotal_after_discount * 1.0625);
+                    var tax = final_amount - subtotal_after_discount;
+    
+                    document.write(num_hotdogs + "<br />");
+                    document.write(num_fries + "<br />");
+                    document.write(num_sodas + "<br />");
+                    document.write("<br />");
+                    document.write("$" + subtotal.toFixed(2) + "<br />");
+                    document.write("$" + discount.toFixed(2) + "<br />");
+                    document.write("$" + subtotal_after_discount.toFixed(2) + "<br />");
+                    document.write("$" + tax.toFixed(2) + "<br />");
+                    document.write("$" + final_amount.toFixed(2) + "<br />");
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
